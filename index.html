@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Periyasamy S, final-year Electronics and Communication Engineering student." />
+  <title>Periyasamy S | ECE Engineer Portfolio</title>
+  <style>
+    :root{
+      --bg:#08111f; --panel:#0d1a2b; --panel2:#101f33; --text:#edf5ff;
+      --muted:#9fb0c5; --accent:#43d9ff; --accent2:#8b7cff; --line:rgba(255,255,255,.09);
+      --shadow:0 20px 60px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:
+      radial-gradient(circle at 80% 0%,rgba(67,217,255,.10),transparent 30%),
+      radial-gradient(circle at 10% 20%,rgba(139,124,255,.10),transparent 28%),var(--bg);
+      color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92%);margin:auto}
+    nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(8,17,31,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;letter-spacing:.5px}.logo span{color:var(--accent)}
+    .links{display:flex;gap:25px;font-size:.92rem;color:var(--muted)}
+    .links a:hover{color:var(--accent)}
+    .menu{display:none;background:none;border:0;color:var(--text);font-size:1.5rem}
+    section{padding:95px 0}
+    .hero{min-height:100vh;display:flex;align-items:center;padding-top:110px}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}
+    .eyebrow{color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.78rem}
+    h1{font-size:clamp(3rem,7vw,5.8rem);line-height:.98;margin:15px 0 20px;letter-spacing:-4px}
+    h1 span{background:linear-gradient(90deg,var(--accent),#9d8dff);-webkit-background-clip:text;color:transparent}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:650px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .btn{padding:12px 19px;border-radius:10px;border:1px solid var(--line);font-weight:700}
+    .primary{background:var(--accent);color:#06101b;border-color:var(--accent)}
+    .secondary{background:rgba(255,255,255,.03)}
+    .hero-card{background:linear-gradient(145deg,rgba(67,217,255,.12),rgba(139,124,255,.08));border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+    .orb{width:180px;height:180px;border-radius:50%;margin:0 auto 25px;background:radial-gradient(circle at 35% 30%,#fff, var(--accent) 15%,#526cff 52%,#15152d 72%);box-shadow:0 0 70px rgba(67,217,255,.25)}
+    .hero-card h3{text-align:center;margin:8px 0}.hero-card p{text-align:center;color:var(--muted);margin:0}
+    .section-title{font-size:2.1rem;margin:0 0 10px}.section-lead{color:var(--muted);max-width:700px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:35px}
+    .card{background:rgba(13,26,43,.8);border:1px solid var(--line);border-radius:18px;padding:26px;transition:.25s}
+    .card:hover{transform:translateY(-4px);border-color:rgba(67,217,255,.35)}
+    .card h3{margin:0 0 10px}.card p{color:var(--muted);margin:0}
+    .tag{display:inline-block;margin:8px 7px 0 0;padding:7px 11px;border-radius:999px;background:rgba(67,217,255,.08);border:1px solid rgba(67,217,255,.15);color:#b9efff;font-size:.85rem}
+    .project-icon{font-size:2rem;margin-bottom:10px}
+    .timeline{border-left:1px solid var(--line);padding-left:24px;margin-top:30px}
+    .timeline-item{position:relative;padding-bottom:25px}
+    .timeline-item:before{content:"";position:absolute;left:-30px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+    .timeline-item h3{margin:0}.timeline-item .meta{color:var(--accent);font-size:.9rem;font-weight:700}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .contact a{display:block;padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025)}
+    .contact small{display:block;color:var(--muted);margin-bottom:3px}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);text-align:center}
+    .reveal{opacity:0;transform:translateY(18px);transition:.7s}.reveal.show{opacity:1;transform:none}
+    @media(max-width:800px){
+      .links{display:none}.menu{display:block}.links.open{display:flex;position:absolute;top:70px;left:0;right:0;padding:20px;background:#091424;flex-direction:column}
+      .hero-grid,.grid,.contact{grid-template-columns:1fr}h1{letter-spacing:-2px}.hero-card{max-width:480px;margin:auto}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">Periyasamy<span>.</span></a>
+    <button class="menu" aria-label="Open menu">☰</button>
+    <div class="links">
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="#internship">Internship</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">Electronics & Communication Engineering</div>
+        <h1>Hi, I'm <span>Periyasamy S</span>.</h1>
+        <p>Final-year ECE student passionate about core electronics, practical engineering projects, and continuous technical learning. Seeking an entry-level technical role where I can contribute to impactful engineering work.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn secondary" href="#contact">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <div class="orb"></div>
+        <h3>ECE Final Year Student</h3>
+        <p>Core electronics • Practical projects • Engineering mindset</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="reveal">
+        <div class="eyebrow">Profile</div>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-lead">Motivated Electronics and Communication Engineering student seeking an entry-level technical role in a forward-thinking organization where strong core technical skills, practical project experience, and a drive for continuous learning can support impactful engineering projects.</p>
+      </div>
+      <div class="grid">
+        <div class="card reveal"><h3>🎓 Education</h3><p>Electronics and Communication Engineering<br><strong>Final Year</strong></p></div>
+        <div class="card reveal"><h3>⚡ Focus</h3><p>Core electronics, hands-on engineering projects, technical problem solving and continuous learning.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="reveal">
+        <div class="eyebrow">Selected Work</div>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-lead">Two practical electronics projects highlighting interest in circuits, sensing and real-world safety applications.</p>
+      </div>
+      <div class="grid">
+        <article class="card reveal">
+          <div class="project-icon">🔌</div>
+          <h3>Mutual Induction</h3>
+          <p>A practical electronics project exploring the principle of mutual induction and electromagnetic coupling between coils.</p>
+          <span class="tag">Electromagnetics</span><span class="tag">Induction</span><span class="tag">Circuits</span>
+        </article>
+        <article class="card reveal">
+          <div class="project-icon">🚨</div>
+          <h3>Fire Alarm</h3>
+          <p>A safety-focused electronics project designed around detecting fire-related conditions and providing an alarm indication.</p>
+          <span class="tag">Safety System</span><span class="tag">Sensors</span><span class="tag">Alarm</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="internship">
+    <div class="container">
+      <div class="reveal">
+        <div class="eyebrow">Experience</div>
+        <h2 class="section-title">Internship</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="meta">Internship Experience</div>
+          <h3>Emetrxe</h3>
+          <p class="section-lead">Internship experience at Emetrxe. Additional role, duration and responsibilities can be added when available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="reveal">
+        <div class="eyebrow">Let's Connect</div>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-lead">Interested in discussing an entry-level opportunity, project or technical role? Feel free to connect.</p>
+      </div>
+      <div class="contact" style="margin-top:30px">
+        <a class="reveal" href="tel:8148072972"><small>Phone</small>8148072972</a>
+        <a class="reveal" href="mailto:720523106016@ecetonline.com"><small>Email</small>720523106016@ecetonline.com</a>
+        <a class="reveal" href="https://www.linkedin.com/in/periyasamy-s" target="_blank" rel="noopener"><small>LinkedIn</small>linkedin.com/in/periyasamy-s ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> Periyasamy S · Electronics & Communication Engineering</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const menu = document.querySelector(".menu"), links = document.querySelector(".links");
+  menu.addEventListener("click", () => links.classList.toggle("open"));
+  document.querySelectorAll(".links a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("show"); }), {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
